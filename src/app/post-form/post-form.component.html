@@ -1,0 +1,16 @@
+<div>
+    <input 
+    type="text" 
+    placeholder="Заголовок..."
+    [(ngModel)] = "title"
+    #titleInput
+    >
+    <input 
+    type="text" 
+    placeholder="Пост..."
+    [(ngModel)] = "text"
+    >
+
+    <button (click)="addPost()">Добавить пост</button>
+    <button (click)="focusTitle()">Эффект</button>
+</div>

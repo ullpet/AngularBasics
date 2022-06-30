@@ -1,0 +1,42 @@
+div {
+    background-color: palevioletred;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+h1 {
+    margin: 0;
+    margin-left: 20px;
+    color: white;
+    position: absolute;
+    margin-top: 15px;
+}
+
+div * {
+    color: white;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+li {
+    margin: 10px;
+    list-style: none;
+    align-self: center;
+}
+
+button {
+    margin-right: 10px;
+    margin-bottom: 0;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: none;
+}

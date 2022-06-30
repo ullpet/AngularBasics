@@ -1,0 +1,9 @@
+<h1>Http Testing</h1>
+<div>
+    <input type="text" [(ngModel)]="postTitle">
+    <button (click)="onAdd()">Add</button>
+</div>
+<div class="card" *ngFor="let post of data">
+    <h2 [class.completed]="post.completed">{{post.title}}</h2>
+    <button [disabled]="post.completed" (click)="completeTodo(post.id!); post.completed=true">Cделано</button>
+</div>

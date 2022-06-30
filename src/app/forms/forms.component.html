@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+    <h1>Forms Testing</h1>
+    <p>Почта</p>
+    <input type="email" formControlName="email">
+    <div
+            *ngIf="form.get('email')?.invalid && form.get('email')?.touched">
+        <small
+            *ngIf="form.get('email')?.errors?.['required']"
+        >Email не может быть пустым</small>
+        <small
+            *ngIf="form.get('email')?.errors?.['email']"
+        >Введите корректный email</small>
+        <small
+            *ngIf="form.get('email')?.errors?.['restrictedEmail']"
+        >Email {{form.get('email')?.value}} уже существует</small>
+    </div>
+    <p>Пароль</p>
+    <input type="password" formControlName="password">
+    <div 
+        *ngIf="form.get('password')?.invalid && form.get('password')?.touched"
+    >
+        <small
+            *ngIf="form.get('password')?.errors?.['required']"
+        >Пароль не может быть пустым</small>
+        <small
+            *ngIf="form.get('password')?.errors?.['minlength']"
+        >Длина пароля должна быть не менее {{form.get('password')?.errors?.['minlength'].requiredLength}} символов</small>
+
+    </div>
+
+
+    <span formGroupName="adress">
+        <h2>Адрес</h2>
+        <p>Страна</p>
+        <select formControlName="country">
+            <option value="ru" selected>Россия</option>
+            <option value="it">Италия</option>
+            <option value="ge">Грузия</option>
+            <option value="tr">Турция</option>
+            <option value="am">Армения</option>
+        </select>
+        <div>
+            <input type="text" formControlName="city">
+            <button type="button" (click)="setCapital()">Выберите столицу</button>
+        </div>
+    </span>
+
+    <h2>Ваши навыки</h2>
+    <div formGroupName="skills">
+        <button type="button" (click)="addSkill()">Добавить навык</button>
+        <div 
+            *ngFor="let control of getControls(); let idx = index">
+            <label>Навык {{idx + 1}}</label>
+            <input [formControlName]="idx">
+        </div>
+        <button type="submit" [disabled]="form.invalid">Отправить</button>
+    </div>
+</form>

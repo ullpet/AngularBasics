@@ -1,0 +1,12 @@
+<h1>Angular Component</h1>
+
+    <app-post-form
+        (onAdd)="updatePosts($event)"
+    ></app-post-form>
+    <app-search-form
+        (onSearch)="updateSearch($event)"
+    ></app-search-form>
+    <app-post
+        *ngFor="let p of posts | filt: search"
+        [post]="p"
+    ></app-post>

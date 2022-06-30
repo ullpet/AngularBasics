@@ -1,1 +1,69 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    background-color: #ffedf0;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 800px;
+    align-items: center;
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+input, select {
+    width: 500px;
+    height: 40px;
+    margin-bottom: 30px;
+    padding-left: 20px;
+    border: 2px solid palevioletred;
+    font-size: 15px;
+}
+
+h1, h2 {
+    color: #c73232;
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 10px 30px;
+    font-size: 17px;
+    color: white;
+    background-color: #c73232;
+    border: none;
+    border-radius: 10px;
+    font-weight: 600;
+    opacity: 0.9;
+    cursor: pointer;
+    margin-bottom: 20px;
+
+}
+
+button:hover {
+    opacity: 1;
+}
+
+.card {
+    align-items: flex-start;
+    border: 2px solid palevioletred;
+    padding: 0px 20px;
+    background-color: white;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+button:disabled {
+    background-color: gray;
+}
